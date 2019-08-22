@@ -1,0 +1,22 @@
+[package]
+name = "fumio-utils"
+description = "utils for fumio crates"
+categories = ["asynchronous", "data-structures"]
+keywords = ["async", "runtime", "fumio"]
+readme = "README.md"
+# also bump version in html_root_url in src/lib.rs
+version = "0.1.0"
+authors = ["Stefan Bühler <stbuehler@web.de>"]
+edition = "2018"
+license = "MIT"
+documentation = "https://docs.rs/fumio-utils"
+homepage = "https://github.com/stbuehler/rust-fumio"
+repository = "https://github.com/stbuehler/rust-fumio"
+
+[features]
+park-thread = ["futures-util-preview"]
+default = ["park-thread"]
+
+[dependencies]
+futures-executor-preview = "0.3.0-alpha.18"
+futures-util-preview = { version = "0.3.0-alpha.18", optional = true }

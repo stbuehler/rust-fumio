@@ -1,0 +1,40 @@
+[package]
+name = "fumio"
+description = "a std futures runtime with IO and timers"
+categories = ["asynchronous", "network-programming"]
+keywords = ["async", "runtime"]
+readme = "README.md"
+# also bump version in html_root_url in src/lib.rs
+version = "0.1.0"
+authors = ["Stefan Bühler <stbuehler@web.de>"]
+edition = "2018"
+license = "MIT"
+documentation = "https://docs.rs/fumio"
+homepage = "https://github.com/stbuehler/rust-fumio"
+repository = "https://github.com/stbuehler/rust-fumio"
+
+[dependencies]
+futures-core-preview = "0.3.0-alpha.18"
+futures-executor-preview = "0.3.0-alpha.18"
+tokio-timer = "0.3.0-alpha.2"
+tokio-executor = "0.2.0-alpha.2"
+
+[dependencies.fumio-pool]
+version = "0.1.0"
+path = "fumio-pool"
+
+[dependencies.fumio-reactor]
+version = "0.1.0"
+path = "fumio-reactor"
+
+[dependencies.fumio-utils]
+version = "0.1.0"
+path = "fumio-utils"
+default-features = false
+
+[dev-dependencies]
+futures-preview = { version = "0.3.0-alpha.18", features = ["nightly","async-await"] }
+
+[workspace]
+members = [ ".", "fumio-pool", "fumio-reactor", "fumio-utils" ]
+default-members = [ ".", "fumio-pool", "fumio-reactor", "fumio-utils" ]

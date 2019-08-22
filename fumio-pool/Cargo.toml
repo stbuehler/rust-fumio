@@ -1,0 +1,24 @@
+[package]
+name = "fumio-pool"
+description = "a std futures single-threaded pool"
+categories = ["asynchronous"]
+keywords = ["async", "runtime", "fumio"]
+readme = "README.md"
+# also bump version in html_root_url in src/lib.rs
+version = "0.1.0"
+authors = ["Stefan Bühler <stbuehler@web.de>"]
+edition = "2018"
+license = "MIT"
+documentation = "https://docs.rs/fumio-pool"
+homepage = "https://github.com/stbuehler/rust-fumio"
+repository = "https://github.com/stbuehler/rust-fumio"
+
+[dependencies]
+futures-core-preview = "0.3.0-alpha.18"
+futures-executor-preview = "0.3.0-alpha.18"
+futures-util-preview = "0.3.0-alpha.18"
+
+[dependencies.fumio-utils]
+version = "0.1.0"
+path = "../fumio-utils"
+default-features = false
